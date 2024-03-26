@@ -19,6 +19,9 @@ defmodule ConfigReader.State do
     GenServer.call(pid, {:lookup, key})
   end
 
+  @doc """
+  Reloads config file from disk to update internal state
+  """
   def reload_config(pid) do
     GenServer.cast(pid, {:reload})
   end
